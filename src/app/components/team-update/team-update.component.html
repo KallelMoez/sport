@@ -1,0 +1,39 @@
+<app-banner title="Update Team"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form #teamUpdateForm (ngSubmit)="updateTeam()">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="findedTeam.name" name="name" class="form-control" placeholder="Team Name" />
+          </div>
+          <div class="form-group">
+            <input
+              type="text" [(ngModel)]="findedTeam.stadium" name="stadium"
+              class="form-control"
+              placeholder="Team's Stadium"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text" [(ngModel)]="findedTeam.owner" name="owner"
+              class="form-control"
+              placeholder="Team's Owner"
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <input
+              type="submit"
+              class="btn btn-primary py-3 px-5 w-50"
+              value="Update Team"
+            />
+          </div>
+          <div class="text-center" *ngIf="resMsg != ''">
+            {{resMsg}}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

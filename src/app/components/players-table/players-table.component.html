@@ -1,0 +1,28 @@
+<div class="col-lg-12 text-center">
+  <div class="widget-next-match">
+    <table class="table custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Player Name</th>
+          <th>Player Age</th>
+          <th>Player Position</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of playersTab">
+          <td>{{m._id}}</td>
+          <td><strong class="text-white">{{m.name}}</strong></td>
+          <td>{{m.age}}</td>
+          <td>{{m.position}}</td>
+          <td>
+            <button class="btn btn-success" (click)="displayPlayer(m._id)">Display</button>
+            <button class="btn btn-warning mx-3" (click)="updatePlayer(m._id)">Update</button>
+            <button class="btn btn-danger" (click)="deletePlayer(m._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

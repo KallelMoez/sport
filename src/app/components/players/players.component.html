@@ -1,0 +1,21 @@
+<app-banner title="All Players"></app-banner>
+<div class="container site-section">
+  <div class="row">
+    <div class="col-4 title-section">
+      <h2 class="heading">Our Players</h2>
+    </div>
+    <div class="col-5">
+      <form>
+        <div class="text-center form-group">
+        <label for="">Filter players by name: </label>
+        <input class="form-control" type="text" [(ngModel)]="term" [ngModelOptions]="{standalone : true}">
+      </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3" *ngFor="let m of playersTab | filter:term">
+      <app-single-player [playerInput]="m"></app-single-player>
+    </div>
+  </div>
+</div>

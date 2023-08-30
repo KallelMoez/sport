@@ -1,0 +1,51 @@
+<app-banner title="Update Match"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form #updateMatchForm="ngForm" (ngSubmit)="updateMatch()">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="findedMatch.teamOne"
+              name="teamOne"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="findedMatch.scoreOne"
+              name="scoreOne"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="findedMatch.teamTwo"
+              name="teamTwo"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="findedMatch.scoreTwo"
+              name="scoreTwo"
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <input
+              type="submit"
+              class="btn btn-primary py-3 px-5 w-50"
+              value="Update Match"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

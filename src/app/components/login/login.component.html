@@ -1,0 +1,38 @@
+<app-banner title="Log In"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form #loginForm="ngForm" (ngSubmit)="login()">
+          <div class="form-group">
+            <input
+              type="email"
+              [(ngModel)]="user.email"
+              name="email"
+              class="form-control"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              [(ngModel)]="user.pwd"
+              name="pwd"
+              class="form-control"
+              placeholder="Password"
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <input
+              type="submit"
+              class="btn btn-primary py-3 px-5 w-50"
+              value="LogIn"
+            />
+          </div>
+          <div class="text-center">{{resMsg}}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

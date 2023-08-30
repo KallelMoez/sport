@@ -1,0 +1,47 @@
+<app-banner title="Imc"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form #imcForm="ngForm" (ngSubmit)="calcul()">
+          <div class="form-group">
+            <input
+              type="text"
+              [(ngModel)]="person.name"
+              name="name"
+              class="form-control"
+              placeholder="person's name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              [(ngModel)]="person.height"
+              name="height"
+              class="form-control"
+              placeholder="person's height"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              [(ngModel)]="person.weight"
+              name="weight"
+              class="form-control"
+              placeholder="person's weight"
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <input
+              type="submit"
+              class="btn btn-primary py-3 px-5 w-50"
+              value="Calcul"
+            />
+          </div>
+          <div class="text-center" *ngIf="resMsg != ''">{{resMsg}}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

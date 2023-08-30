@@ -1,0 +1,72 @@
+<app-banner title="Update Stadium"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form [formGroup]="updateStadiumForm">
+          <div class="form-group">
+            <input
+              type="text"
+              formControlName="name"
+              [(ngModel)]="stadium.name"
+              class="form-control"
+              placeholder="Stadium Name"
+            />
+          </div>
+          <div
+            *ngIf="
+              updateStadiumForm.controls['name'].invalid &&
+              (updateStadiumForm.controls['name'].touched ||
+                updateStadiumForm.controls['name'].dirty)
+            "
+          >
+            <div *ngIf="updateStadiumForm.controls['name'].errors.required">
+              no, no , nooooo
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              formControlName="capacity"
+              [(ngModel)]="stadium.capacity"
+              class="form-control"
+              placeholder="Capacity"
+            />
+          </div>
+          <div
+            *ngIf="
+              updateStadiumForm.controls['capacity'].invalid &&
+              (updateStadiumForm.controls['capacity'].touched ||
+                updateStadiumForm.controls['capacity'].dirty)
+            "
+          >
+            <div *ngIf="updateStadiumForm.controls['capacity'].errors.required">
+              no, no , nooooo
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              formControlName="country"
+              [(ngModel)]="stadium.country"
+              class="form-control"
+              placeholder="Country"
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <input
+              type="submit"
+              class="btn btn-primary py-3 px-5 w-50"
+              (click)="updateStadium()"
+              value="update Stadium"
+              [disabled]="updateStadiumForm.invalid"
+            />
+          </div>
+          <div class="text-center" *ngIf="resMsg != ''">{{ resMsg }}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<app-banner title="Search"></app-banner>
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form [formGroup]="searchForm" >
+          <p>City : </p>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="city"
+            />
+          </div>
+          <p>Country : </p>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="country"
+            />
+          </div>
+          
+          <div class="form-group text-center">
+            <input
+              type="submit"
+              (click)="search()"
+              class="btn btn-primary py-3 px-5 w-50"
+              value="Search"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

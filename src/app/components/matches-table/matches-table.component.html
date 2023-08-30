@@ -1,0 +1,47 @@
+<div class="col-lg-12 text-center">
+  <div class="widget-next-match">
+    <table class="table custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Team One</th>
+          <th>Score One</th>
+          <th>Team Two</th>
+          <th>Score Two</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of pageOfItems">
+          <td>{{ x._id }}</td>
+          <td>
+            <strong class="text-white">{{ x.teamOne }}</strong>
+          </td>
+          <td>{{ x.scoreOne }}</td>
+          <td>
+            <strong class="text-white">{{ x.teamTwo }}</strong>
+          </td>
+          <td>{{ x.scoreTwo }}</td>
+          <td>
+            <button class="btn btn-success" (click)="displayMatch(x._id)">
+              Display
+            </button>
+            <button class="btn btn-warning mx-3" (click)="updateMatch(x._id)">
+              Update
+            </button>
+            <button class="btn btn-danger" (click)="deleteMatch(x._id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      
+    </table>
+        <jw-pagination
+          class="pagination"
+          [items]="matchesTab"
+          (changePage)="onChangePage($event)"
+          [pageSize]="5"
+        ></jw-pagination>
+  </div>
+</div>
